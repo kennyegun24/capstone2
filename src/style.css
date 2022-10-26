@@ -77,3 +77,14 @@ main {
   font-size: 15px;
   margin-top: 10px;
 }
+
+.foot-item {
+  display: flex;
+  padding: 30px 60px;
+  align-items: center;
+}
+
+.foot-line {
+  border: 1px solid black;
+  margin-top: 20px;
+}
