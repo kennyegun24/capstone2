@@ -23,7 +23,7 @@
   width: 100%;
   padding-top: 5px;
   padding-bottom: 5px;
-  z-index: 2px;
+  z-index: 2;
 }
 
 .column {
@@ -36,7 +36,7 @@ main {
   margin-top: 50px;
 }
 
-.link a{
+.link a {
   color: #fff;
   text-decoration: none;
 }
@@ -64,7 +64,7 @@ main {
 
 .meal {
   font-weight: 500;
-  font-size: 18px
+  font-size: 18px;
 }
 
 .nation {
@@ -73,7 +73,6 @@ main {
 }
 
 .button {
-  border: s;
   padding: 5px;
   font-size: 15px;
   margin-top: 10px;

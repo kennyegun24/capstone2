@@ -2,7 +2,9 @@ import { foodApiObj } from './APIs';
 
 const main = document.querySelector('main');
 
+/* eslint-disable */
 export const display = async () => {
+/* eslint-enable */
   // let markup = '';
 
   foodApiObj.forEach(async (item) => {
@@ -36,7 +38,6 @@ export const display = async () => {
                 <button class="button">Comments</button>
                 <button class="button">Reservations</button>
             </section>`;
-        console.log('fff');
 
         // renderLikes(item.idMeal);
         // return 'done';
