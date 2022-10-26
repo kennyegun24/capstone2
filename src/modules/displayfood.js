@@ -1,5 +1,5 @@
 import { foodApiObj } from './APIs';
-
+// import { modalDisplay } from './modules/commentpop.js';
 const main = document.querySelector('main');
 
 /* eslint-disable */
@@ -37,6 +37,7 @@ export const display = async () => {
               <div class="column flex">
                 <button class="button">Comments</button>
                 <button class="button">Reservations</button>
+                
             </section>`;
 
         // renderLikes(item.idMeal);
