@@ -1,19 +1,19 @@
-import { foods } from "./food";
+import { foods } from './food';
 
-const comment_Api = "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/"
-const comment_key = 'jUTHHFhjhjmbJGYTMBJgyj'
-const comment_Url = `${comment_Api}/apps/:${comment_key}/comments/`
+const commentApi = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
+const commentkey = 'jUTHHFhjhjmbJGYTMBJgyj';
+const commentUrl = `${commentApi}/apps/:${commentkey}/comments/`;
 
-const like_api = "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/"
-const like_key = 'ahggGFtfjsuJHUTHhfyFHJ'
-const like_url = `${like_api}/apps/:${like_key}/likes/`
+const likeApi = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
+const likeKey = 'ahggGFtfjsuJHUTHhfyFHJ';
+const likeUrl = `${likeApi}/apps/:${likeKey}/likes/`;
 
-const foodApi = 'www.themealdb.com/api/json/v1/1/search.php?s'
+const foodApi = 'https://themealdb.com/api/json/v1/1/search.php?s';
 
-const foodApiObj = []
+const foodApiObj = [];
 
 foods.forEach((food) => {
-  foodApiObj.push(`${foodApi}=${food}`)
-})
+  foodApiObj.push(`${foodApi}=${food}`);
+});
 
-export {comment_Url, like_url, foodApiObj}
+export { commentUrl, likeUrl, foodApiObj };
