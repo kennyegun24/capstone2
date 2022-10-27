@@ -95,11 +95,57 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
-  background-color: #fff;
+  /* background-color: rgb(55, 36, 143); */
   width: 90vw;
   min-height: 565px;
-  border: 1px solid #dfe1e6;
+  border: 2px solid rgb(223, 17, 113);
   animation: 1s drop;
   display: none;
   padding: 0 8px;
+}
+
+.close-button {
+  cursor: pointer;
+  outline: none;
+  margin-right: 4px;
+  background-color: #fff;
+  color: #67798e;
+  border: none;
+  font-size: 70px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.add-comm {
+  display: flex;
+  justify-content: center;
+}
+
+.inputDiv {
+  margin: 0 300px;
+}
+
+#name {
+  width: 300px;
+  color: #67798e;
+  font-size: 25px;
+  margin-bottom: 16px;
+  /* font-weight: 600; */
+}
+
+#text {
+  width: 400px;
+  height: 72px;
+  color: #67798e;
+  font-size: 25px;
+  margin-bottom: 16px;
+}
+
+.submit-btn {
+  padding: 5px 18px;
+  font-size: 15px;
+  margin-top: 10px;
+  color: red;
 }
