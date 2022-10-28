@@ -119,9 +119,9 @@ export const display = async () => {
           const name = document.querySelector('#name');
           const text = document.querySelector('#text');
           const clearInput = () => {
-            name.value = ''
-            text.value = ''
-          }
+            name.value = '';
+            text.value = '';
+          };
 
           const form = document.querySelector('.form');
           form.addEventListener('submit', (e) => {
@@ -129,7 +129,7 @@ export const display = async () => {
             const name = document.querySelector('#name').value;
             const text = document.querySelector('#text').value;
             comment(name, text);
-            clearInput()
+            clearInput();
           });
           const close = document.querySelector('.close-button');
           close.addEventListener('click', () => {
