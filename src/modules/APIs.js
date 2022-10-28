@@ -1,11 +1,11 @@
 import { foods } from './food';
 
-const commentApi = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
-const commentkey = 'jUTHHFhjhjmbJGYTMBJgyj';
-const commentUrl = `${commentApi}/apps/:${commentkey}/comments/`;
+const commentkey = 'HJ3nJrQxKFWMKnh6RtwV';
+const commentUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${commentkey}/comments`;
+// const  = `${commentApi}/apps/${commentkey}/comments/`;
 
 const likeApi = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
-const likeKey = 'ahggGFtfjsuJHUTHhfyFHJ';
+const likeKey = 'HJ3nJrQxKFWMKnh6RtwV';
 const likeUrl = `${likeApi}/apps/:${likeKey}/likes/`;
 
 const foodApi = 'https://themealdb.com/api/json/v1/1/search.php?s';
