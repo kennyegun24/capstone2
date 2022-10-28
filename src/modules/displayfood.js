@@ -116,18 +116,26 @@ export const display = async () => {
             }
           };
 
+          const name = document.querySelector('#name');
+          const text = document.querySelector('#text');
+          const clearInput = () => {
+            name.value = ''
+            text.value = ''
+          }
+
           const form = document.querySelector('.form');
           form.addEventListener('submit', (e) => {
             e.preventDefault();
             const name = document.querySelector('#name').value;
             const text = document.querySelector('#text').value;
             comment(name, text);
+            clearInput()
           });
           const close = document.querySelector('.close-button');
           close.addEventListener('click', () => {
             get(item.idMeal);
-            // popup.style.display = 'none';
-            // document.body.style.overflow = 'auto';
+            popup.style.display = 'none';
+            document.body.style.overflow = 'auto';
           });
           const viewMore = document.querySelector('.view_more');
           viewMore.addEventListener('click', () => {
