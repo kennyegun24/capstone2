@@ -95,6 +95,7 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
+
   /* background-color: rgb(55, 36, 143); */
   width: 90vw;
   min-height: 565px;
@@ -105,17 +106,17 @@ main {
 }
 
 .close-button {
+  position: absolute;
   cursor: pointer;
   outline: none;
   margin-right: 4px;
   background-color: #fff;
   color: #67798e;
   border: none;
-  font-size: 70px;
-  margin-bottom: 10px;
+  font-size: 30px;
   font-weight: 600;
-  display: flex;
-  justify-content: flex-end;
+  top: 0;
+  right: 0;
 }
 
 .add-comm {
@@ -128,18 +129,15 @@ main {
 }
 
 #name {
-  width: 300px;
+  width: 200px;
   color: #67798e;
-  font-size: 25px;
   margin-bottom: 16px;
-  /* font-weight: 600; */
+  padding: 5px;
 }
 
 #text {
-  width: 400px;
-  height: 72px;
+  width: 200px;
   color: #67798e;
-  font-size: 25px;
   margin-bottom: 16px;
 }
 
@@ -148,4 +146,56 @@ main {
   font-size: 15px;
   margin-top: 10px;
   color: red;
+}
+
+/* pop */
+.pop {
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  position: relative;
+  top: 22px;
+  padding: 20px;
+}
+
+.popIt {
+  position: fixed;
+  top: 10px;
+  max-height: 100vh;
+  overflow: auto;
+  width: 100%;
+}
+
+.popup_image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pop_image {
+  width: 200px;
+  margin: auto;
+}
+
+.instructions {
+  height: 300px;
+  margin-top: 20px;
+  width: 300px;
+  overflow: auto;
+  background: #eeb3b3;
+  font-size: 14px;
+}
+
+.instructions::-webkit-scrollbar {
+  display: none;
+}
+
+.pop_meal {
+  font-size: 20px;
+}
+
+.new_list {
+  display: flex;
+  gap: 10px;
+  font-size: 16px;
 }
