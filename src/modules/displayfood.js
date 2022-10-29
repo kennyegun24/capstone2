@@ -1,8 +1,10 @@
-import { foodApiObj, commentUrl } from './APIs';
+import { foodApiObj, commentUrl, likeUrl } from './APIs';
+import Likes from './likes';
 
 import Comment from './comments';
 // import { modalDisplay } from './modules/commentpop.js';
-const main = document.querySelector('main');
+const main = document.querySelector('.main');
+
 const popup = document.querySelector('#modalDisplay');
 
 /* eslint-disable */
@@ -22,6 +24,10 @@ export const display = async () => {
         const div = document.createElement('div');
         const btn = document.createElement('button');
         const btn2 = document.createElement('button');
+        const twoDiv = document.createElement('div');
+        const threeDiv = document.createElement('div');
+        const likeIcon = document.createElement('i');
+        const likeCounts = document.createElement('p');
 
         section.innerHTML = `
               <div class="">
@@ -31,26 +37,55 @@ export const display = async () => {
               <div class="meal_image">
                 <img class="meal_image" src="${item.strMealThumb}" alt="asdf">
               </div>
-              <div class="flex actions_name">
-                <p class="meal">${item.strMeal}</p>
-                <div>
-                  <i class="fa-solid fa-heart"></i>
-                  <span>
-                    <p>2 likes</p>
-                  </span>
-                </div>
-              </div>
             `;
+        twoDiv.innerHTML = `
+        <p class="meal">${item.strMeal}</p>
+        `;
         btn.innerText = 'Comments';
-        btn2.innerText = 'Comments';
+        btn2.innerText = 'Reservations';
         section.classList = 'food_items flex';
         div.classList = 'column flex';
         btn.classList = 'button';
         btn2.classList = 'button';
+        twoDiv.classList = 'flex actions_name';
+        likeIcon.classList = 'fa-solid fa-heart like';
+        likeCounts.classList = 'like_count';
+        likeCounts.innerText = '0';
+        threeDiv.append(likeIcon, likeCounts);
+        twoDiv.append(threeDiv);
         div.append(btn, btn2);
-        section.append(div);
+        section.append(twoDiv, div);
         main.append(section);
 
+        threeDiv.addEventListener('click', () => {
+          const bisplay = async (gameData) => {
+            likeCounts.innerHTML = '';
+            const displayScores = gameData.map((list) => `<div class="new_list">
+                                                              <p> ${list.likes} </p>
+                                                              
+                                                            </div>`).join('');
+            likeCounts.innerHTML = displayScores;
+          };
+
+          const liked = async () => {
+            const like = new Likes(item.idMeal);
+            const response = await fetch(likeUrl, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(like) });
+            const data = response;
+            console.log(data);
+            return data;
+          };
+
+          const get = async (id) => {
+            const response = await fetch(`${likeUrl}?item_id=${id}`);
+            const data = await response.json(id);
+            const idss = data.filter((ids) => ids.item_id === id);
+            if (response.ok) {
+              bisplay(idss);
+            }
+          };
+          liked();
+          get(item.idMeal);
+        });
         btn.addEventListener('click', () => {
           const pop = () => {
             popup.innerHTML = `
@@ -112,7 +147,7 @@ export const display = async () => {
             const data = await response.json();
             if (response.ok) {
               bisplay(data);
-              commentCount.innerHTML = data.length;
+              commentCount.innerHTML = `Comments: ${data.length}`;
             }
           };
 
@@ -133,7 +168,6 @@ export const display = async () => {
           });
           const close = document.querySelector('.close-button');
           close.addEventListener('click', () => {
-            get(item.idMeal);
             popup.style.display = 'none';
             document.body.style.overflow = 'auto';
           });
