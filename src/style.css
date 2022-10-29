@@ -14,7 +14,7 @@
   list-style-type: none;
   align-items: center;
   justify-content: center;
-  gap: 30%;
+  gap: 15%;
   font-size: 20px;
   font-weight: 550;
   position: fixed;
@@ -24,6 +24,10 @@
   padding-top: 5px;
   padding-bottom: 5px;
   z-index: 2;
+}
+
+.item_count {
+  color: #fff;
 }
 
 .column {
