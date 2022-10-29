@@ -56,34 +56,33 @@ export const display = async () => {
         div.append(btn, btn2);
         section.append(twoDiv, div);
         main.append(section);
+        const kisplay = async (gameData) => {
+          likeCounts.innerHTML = '';
+          const displayScores = gameData.map((list) => `<div class="new_list">
+                                                            <p> ${list.likes} </p>
+                                                            
+                                                          </div>`).join('');
+          likeCounts.innerHTML = displayScores;
+        };
 
+        const lik = async () => {
+          const like = new Likes(item.idMeal);
+          const response = await fetch(likeUrl, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(like) });
+          const data = response;
+          return data;
+        };
+
+        const get = async (id) => {
+          const response = await fetch(`${likeUrl}?item_id=${id}`);
+          const data = await response.json(id);
+          const idss = data.filter((ids) => ids.item_id === id);
+          if (response.ok) {
+            kisplay(idss);
+          }
+        };
+        get(item.idMeal);
         threeDiv.addEventListener('click', () => {
-          const bisplay = async (gameData) => {
-            likeCounts.innerHTML = '';
-            const displayScores = gameData.map((list) => `<div class="new_list">
-                                                              <p> ${list.likes} </p>
-                                                              
-                                                            </div>`).join('');
-            likeCounts.innerHTML = displayScores;
-          };
-
-          const liked = async () => {
-            const like = new Likes(item.idMeal);
-            const response = await fetch(likeUrl, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(like) });
-            const data = response;
-            console.log(data);
-            return data;
-          };
-
-          const get = async (id) => {
-            const response = await fetch(`${likeUrl}?item_id=${id}`);
-            const data = await response.json(id);
-            const idss = data.filter((ids) => ids.item_id === id);
-            if (response.ok) {
-              bisplay(idss);
-            }
-          };
-          liked();
+          lik();
           get(item.idMeal);
         });
         btn.addEventListener('click', () => {
@@ -101,7 +100,7 @@ export const display = async () => {
                 <p> Category: ${item.strCategory}</p>
                 <div class="comment_count">
                 </div>
-                <button class="view_more">View Comments</button>
+                <button class="view_more">Refresh Comments</button>
                 <div class="pop_comment">
                 
                 </div>
@@ -142,7 +141,7 @@ export const display = async () => {
             commentPop.innerHTML = displayScores;
           };
 
-          const get = async (id) => {
+          const getss = async (id) => {
             const response = await fetch(`${commentUrl}?item_id=${id}`);
             const data = await response.json();
             if (response.ok) {
@@ -165,15 +164,17 @@ export const display = async () => {
             const text = document.querySelector('#text').value;
             comment(name, text);
             clearInput();
+            getss(item.idMeal);
           });
           const close = document.querySelector('.close-button');
           close.addEventListener('click', () => {
             popup.style.display = 'none';
             document.body.style.overflow = 'auto';
           });
+          getss(item.idMeal);
           const viewMore = document.querySelector('.view_more');
           viewMore.addEventListener('click', () => {
-            get(item.idMeal);
+            getss(item.idMeal);
           });
         });
       });
