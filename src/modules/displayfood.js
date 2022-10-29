@@ -167,7 +167,10 @@ export const display = async () => {
             clearInput();
             getss(item.idMeal);
           });
-          window.addEventListener('click', () => {
+          form.addEventListener('focusout', () => {
+            getss(item.idMeal);
+          });
+          window.addEventListener('mouseover', () => {
             getss(item.idMeal);
           });
           const close = document.querySelector('.close-button');
