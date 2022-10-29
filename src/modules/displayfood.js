@@ -158,12 +158,16 @@ export const display = async () => {
           };
 
           const form = document.querySelector('.form');
+
           form.addEventListener('submit', (e) => {
             e.preventDefault();
-            const name = document.querySelector('#name').value;
-            const text = document.querySelector('#text').value;
-            comment(name, text);
+            const namess = document.querySelector('#name').value;
+            const textss = document.querySelector('#text').value;
+            comment(namess, textss);
             clearInput();
+            getss(item.idMeal);
+          });
+          window.addEventListener('click', () => {
             getss(item.idMeal);
           });
           const close = document.querySelector('.close-button');
