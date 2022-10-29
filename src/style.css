@@ -88,3 +88,114 @@ main {
   border: 1px solid black;
   margin-top: 20px;
 }
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+
+  /* background-color: rgb(55, 36, 143); */
+  width: 90vw;
+  min-height: 565px;
+  border: 2px solid rgb(223, 17, 113);
+  animation: 1s drop;
+  display: none;
+  padding: 0 8px;
+}
+
+.close-button {
+  position: absolute;
+  cursor: pointer;
+  outline: none;
+  margin-right: 4px;
+  background-color: #fff;
+  color: #67798e;
+  border: none;
+  font-size: 30px;
+  font-weight: 600;
+  top: 0;
+  right: 0;
+}
+
+.add-comm {
+  display: flex;
+  justify-content: center;
+}
+
+.inputDiv {
+  margin: 0 300px;
+}
+
+#name {
+  width: 200px;
+  color: #67798e;
+  margin-bottom: 16px;
+  padding: 5px;
+}
+
+#text {
+  width: 200px;
+  color: #67798e;
+  margin-bottom: 16px;
+}
+
+.submit-btn {
+  padding: 5px 18px;
+  font-size: 15px;
+  margin-top: 10px;
+  color: red;
+}
+
+/* pop */
+.pop {
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  position: relative;
+  top: 22px;
+  padding: 20px;
+}
+
+.popIt {
+  position: fixed;
+  top: 10px;
+  max-height: 100vh;
+  overflow: auto;
+  width: 100%;
+}
+
+.popup_image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pop_image {
+  width: 200px;
+  margin: auto;
+}
+
+.instructions {
+  height: 300px;
+  margin-top: 20px;
+  width: 300px;
+  overflow: auto;
+  background: #eeb3b3;
+  font-size: 14px;
+}
+
+.instructions::-webkit-scrollbar {
+  display: none;
+}
+
+.pop_meal {
+  font-size: 20px;
+}
+
+.new_list {
+  display: flex;
+  gap: 10px;
+  font-size: 16px;
+}
