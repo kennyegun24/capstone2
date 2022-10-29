@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ul {
+  list-style-type: none;
+  align-items: center;
+  justify-content: center;
+  gap: 15%;
+  font-size: 20px;
+  font-weight: 550;
+  position: fixed;
+  top: 0;
+  background: #2d2c2c;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  z-index: 2;
+}
+
+.item_count {
+  color: #fff;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.main {
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.link a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.food_items {
+  justify-content: center;
+  flex-basis: 30%;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.meal_image {
+  width: 200px;
+}
+
+.flex {
+  display: flex;
+}
+
+.actions_name {
+  gap: 10px;
+}
+
+.meal {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.nation {
+  font-weight: 550;
+  font-size: 18px;
+}
+
+.button {
+  padding: 5px;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.foot-item {
+  display: flex;
+  padding: 30px 60px;
+  align-items: center;
+}
+
+.foot-line {
+  border: 1px solid black;
+  margin-top: 20px;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+
+  /* background-color: rgb(55, 36, 143); */
+  width: 90vw;
+  min-height: 565px;
+  border: 2px solid rgb(223, 17, 113);
+  animation: 1s drop;
+  display: none;
+  padding: 0 8px;
+}
+
+.close-button {
+  position: absolute;
+  cursor: pointer;
+  outline: none;
+  margin-right: 4px;
+  background-color: #fff;
+  color: #67798e;
+  border: none;
+  font-size: 30px;
+  font-weight: 600;
+  top: 0;
+  right: 0;
+}
+
+.add-comm {
+  display: flex;
+  justify-content: center;
+}
+
+.inputDiv {
+  margin: 0 300px;
+}
+
+#name {
+  width: 200px;
+  color: #67798e;
+  margin-bottom: 16px;
+  padding: 5px;
+}
+
+#text {
+  width: 200px;
+  color: #67798e;
+  margin-bottom: 16px;
+}
+
+.submit-btn {
+  padding: 5px 18px;
+  font-size: 15px;
+  margin-top: 10px;
+  color: red;
+}
+
+/* pop */
+.pop {
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  position: relative;
+  top: 22px;
+  padding: 20px;
+}
+
+.popIt {
+  position: fixed;
+  top: 10px;
+  max-height: 100vh;
+  overflow: auto;
+  width: 100%;
+}
+
+.popup_image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pop_image {
+  width: 200px;
+  margin: auto;
+}
+
+.instructions {
+  height: 300px;
+  margin-top: 20px;
+  width: 300px;
+  overflow: auto;
+  background: #eeb3b3;
+  font-size: 14px;
+}
+
+.instructions::-webkit-scrollbar {
+  display: none;
+}
+
+.pop_meal {
+  font-size: 20px;
+}
+
+.new_list {
+  display: flex;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.display_likes {
+  font-size: 10px;
+  margin-top: 50px;
+}
